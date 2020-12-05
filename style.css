@@ -1,0 +1,61 @@
+header {
+  background-color: #db7093;
+  color: white;
+  height: 50px;
+}
+
+header h1 {
+  margin: 0;
+  position: absolute;
+  right: 50px;
+}
+.youtube {
+  position: absolute;
+  width: 400px;
+  top: 80px;
+  left: 100px;
+}
+.links {
+  position: absolute;
+  top: 450px;
+  left: 100px;
+}
+.links h4 {
+  margin: 0;
+  background-color: #db7093;
+  color: white;
+  padding: 0px 15px;
+  border-radius: 3px;
+}
+.links_logo {
+  position: absolute;
+  display: flex;
+  justify-content: flex-start;
+  margin: 5px;
+}
+.links_logo img {
+  margin-right: 10px;
+}
+
+.member_list {
+  height: 500px;
+  width: 600px;
+  position: absolute;
+  top: 80px;
+  right: 100px;
+  display: grid;
+  grid-template-columns: 130px 130px 130px 130px 130px;
+}
+.member_list img {
+  height: 130px;
+  width: 130px;
+  object-fit: cover;
+}
+.member_list img:hover {
+  transform: scale(2, 2);
+  transition-duration: 0.3s;
+}
+.member_list h5 {
+  margin: 0;
+  text-align: center;
+}
