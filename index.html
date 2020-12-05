@@ -33,9 +33,9 @@ function ajaxDataYoutube() {
   })
 }
 ajaxDataYoutube().done(function(jsondataYt) {
-    var ytID = jsondataYt.items[0].id.videoId
-    var ytTitle = jsondataYt.items[0].snippet.title
-    var YtHtml = '<iframe width="400" height="250" src="https://www.youtube.com/embed/' + ytID + '?controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen><\/iframe><h4>' + ytTitle + '<\/h4>'
+    const ytID = jsondataYt.items[0].id.videoId
+    const ytTitle = jsondataYt.items[0].snippet.title
+    const YtHtml = '<iframe width="400" height="250" src="https://www.youtube.com/embed/' + ytID + '?controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen><\/iframe><h4>' + ytTitle + '<\/h4>'
     $('#youtube_list').append(YtHtml);
 });
  </script>
