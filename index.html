@@ -3,103 +3,99 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <link rel="stylesheet" type="text/css" href="style.css">
-  <title>モーニング娘。'20</title>
+  <title>モーニング娘。'21</title>
 </head>
 <header>
-  <h1>モーニング娘。'20</h1>
+  <h1>モーニング娘。'21</h1>
 </header>
 <body>
-<div class="main">
-<div id="youtube_list" class="youtube"> 
-<script>
-function ajaxDataYoutube() {
-  return $.ajax({
-      type: 'GET',
-      url: 'https://www.googleapis.com/youtube/v3/search',
-      data: {
-          part: "snippet",
-          maxResults: "3",
-          channelId: "UCoKXb95K5h3sME3c9OCBaeA",
-          key: "AIzaSyDd_LkH6TVqYH9gfkt1q0ttpaxtkSPcsP4", 
-          order: "date", //最新順に取得する
-          type: "video",
-      },
-      dataType: 'json',
-      error: function() {
-          $('#youtube_list').append('最新動画の取得に失敗しました。');
-      }
-  })
-}
-ajaxDataYoutube().done(function(jsondataYt) {
-    const ytID = jsondataYt.items[0].id.videoId
-    const ytTitle = jsondataYt.items[0].snippet.title
-    const YtHtml = '<iframe width="400" height="250" src="https://www.youtube.com/embed/' + ytID + '?controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen><\/iframe><h4>' + ytTitle + '<\/h4>'
-    $('#youtube_list').append(YtHtml);
-});
- </script>
-</div>
-
-<div class="links">
-  <h4>オフィシャルサイト・公式チャンネル</h4>
-  <div class="links_logo">
-    <a href=" http://www.helloproject.com/morningmusume/" target="_blank" rel="noopener noreferrer">
-      <img src="https://pics.prcm.jp/musume13made/32523674/jpeg/32523674_480x480.jpeg"  style="height:100px;width:100px;">
-    </a>
-   <a href="http://www.helloproject.com/" target="_blank" rel="noopener noreferrer"> 
-    <img src="https://cdn-ak.f.st-hatena.com/images/fotolife/d/drifter_2181/20161025/20161025123949.jpg"  style="height:100px;width:100px;">
-   </a>
-   <a href="https://www.youtube.com/channel/UCoKXb95K5h3sME3c9OCBaeA" target="_blank" rel="noopener noreferrer">
-    <img src="https://av.watch.impress.co.jp/img/avw/list/1078/251/yl2.jpg" style="height:100px;width:150px;">
-  </a>
-  </div>
-</div>
-<div class="member_list">
-  <div class="member"><img src="https://stat.ameba.jp/user_images/20201031/22/morningmusume-9ki/67/a4/j/o1080081014843750137.jpg?caw=800">
-  <h5>譜久村 聖</h5>
-  </div>
-  <div class="member"><img src="https://stat.ameba.jp/user_images/20200611/21/morningmusume-9ki/4d/15/j/o1080144014772712225.jpg?caw=800">
-  <h5>生田 衣梨奈</h5>
-  </div>
-  <div class="member ayumin"><img src="https://www.ism.life/uploads/img_nanitsuku_006-01.jpg">
-  <h5>石田 亜佑美</h5>
-  </div>
-  <div class="member ma-chan"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/i/ichika1129-40/20181117/20181117204903.jpg">
-  <h5>佐藤 優樹</h5>
-  </div>
-  <div class="member odasaku"><img src="https://thetv.jp/i/nw/182151/1083182.jpg?w=615">
-  <h5>小田 さくら</h5>
-  </div>
-  <div class="member nonaka"><img src="https://dmokabusikigaisya.com/wp-content/uploads/2018/04/d073e414e4e0f77be1824fb10f1203170f6c8918.jpg">
-  <h5>野中 美希</h5>
-  </div>
-  <div class="member maria"><img src="https://radichubu.jp/files/topics/27203_ext_01_0.jpg">
-  <h5>牧野 真莉愛</h5>
-  </div>
-  <div class="member logo"><img src="https://stat.ameba.jp/user_images/20200314/02/rassy-bi/e8/f3/j/o0475031014727633585.jpg?caw=800"></div>
-  <div class="member nechin"><img src="https://thetv.jp/i/nw/182385/1084547.jpg?w=615">
-  <h5>羽賀 朱音</h5>
-  </div>
-  <div class="member kaede"><img src="https://cancam.jp/uploads/2020/08/26/KaedeKaga03.jpg">
-  <h5>加賀 楓</h5>
-  </div>
-  <div class="member yokoyan"><img src="https://otekomachi.yomiuri.co.jp/wp-content/uploads/2020/09/c8221b0c902cbbcb17649f2f04ae027d.jpg">
-  <h5>横山 玲奈</h5>
-  </div>    
-  <div class="member chi-chan"><img src="https://image.space.rakuten.co.jp/d/strg/ctrl/9/bff5cd9eaf45eba540bb21c8a30fbd82b8962895.11.2.9.2.jpeg">
-  <h5>森戸 知沙希</h5>
-  </div>
-  <div class="member kitagawa"><img src="https://thetv.jp/i/nw/1011293/10093617.jpg?w=615">
-  <h5>北川 莉央</h5>
-  </div>
-  <div class="member hoamatan"><img src="https://pbs.twimg.com/media/EihOvDCU8AAK6L1?format=jpg&name=large">
-  <h5>岡村 ほまれ</h5>
-  </div>
-  <div class="member panda"><img src="https://image.space.rakuten.co.jp/d/strg/ctrl/9/2e98f14a3c62f3d7f65eeb4a5fbf830f0c0b6995.11.2.9.2.jpeg">
-  <h5>山崎 愛生</h5>
-  </div>
-</div>
-</div>
+<div class="container">
+  <div class="box_a">
+    <!--youtube最新動画-->
+    <div id="youtube_list" class="youtube"></div>
+    <!--リンク一覧-->
+    <div class="links">
+      <h4>オフィシャルサイト・公式チャンネル</h4>
+      <div class="links_logo">
+        <a href=" http://www.helloproject.com/morningmusume/" target="_blank" rel="noopener noreferrer">
+          <img src="https://pics.prcm.jp/musume13made/32523674/jpeg/32523674_480x480.jpeg"  style="height:100px;width:100px;">
+        </a>
+        <a href="http://www.helloproject.com/" target="_blank" rel="noopener noreferrer"> 
+        <img src="https://cdn-ak.f.st-hatena.com/images/fotolife/d/drifter_2181/20161025/20161025123949.jpg"  style="height:100px;width:100px;">
+        </a>
+        <a href="https://www.youtube.com/channel/UCoKXb95K5h3sME3c9OCBaeA" target="_blank" rel="noopener noreferrer">
+        <img src="https://av.watch.impress.co.jp/img/avw/list/1078/251/yl2.jpg" style="height:100px;width:150px;">
+        </a>
+      </div>
+    </div>
+ </div>
+  <!--メンバー一覧-->
+  <div class="box_b">
+    <div class="member_list">
+      <div class="member">
+        <img src="https://stat.ameba.jp/user_images/20201031/22/morningmusume-9ki/67/a4/j/o1080081014843750137.jpg?caw=800">
+        <h5>譜久村 聖</h5>
+      </div>
+      <div class="member">
+        <img src="https://stat.ameba.jp/user_images/20200611/21/morningmusume-9ki/4d/15/j/o1080144014772712225.jpg?caw=800">
+        <h5>生田 衣梨奈</h5>
+      </div>
+      <div class="member">
+        <img src="https://www.ism.life/uploads/img_nanitsuku_006-01.jpg">
+        <h5>石田 亜佑美</h5>
+      </div>
+      <div class="member">
+        <img src="https://cdn-ak.f.st-hatena.com/images/fotolife/i/ichika1129-40/20181117/20181117204903.jpg">
+        <h5>佐藤 優樹</h5>
+      </div>
+      <div class="member">
+        <img src="https://thetv.jp/i/nw/182151/1083182.jpg?w=615">
+        <h5>小田 さくら</h5>
+      </div>
+      <div class="member">
+        <img src="https://dmokabusikigaisya.com/wp-content/uploads/2018/04/d073e414e4e0f77be1824fb10f1203170f6c8918.jpg">
+        <h5>野中 美希</h5>
+      </div>
+      <div class="member">
+        <img src="https://radichubu.jp/files/topics/27203_ext_01_0.jpg">
+        <h5>牧野 真莉愛</h5>
+      </div>
+      <div class="member">
+        <img src="https://stat.ameba.jp/user_images/20200314/02/rassy-bi/e8/f3/j/o0475031014727633585.jpg?caw=800">
+      </div>
+      <div class="member">
+        <img src="https://thetv.jp/i/nw/182385/1084547.jpg?w=615">
+        <h5>羽賀 朱音</h5>
+      </div>
+      <div class="member">
+        <img src="https://cancam.jp/uploads/2020/08/26/KaedeKaga03.jpg">
+        <h5>加賀 楓</h5>
+      </div>
+      <div class="member">
+        <img src="https://otekomachi.yomiuri.co.jp/wp-content/uploads/2020/09/c8221b0c902cbbcb17649f2f04ae027d.jpg">
+        <h5>横山 玲奈</h5>
+      </div>    
+      <div class="member">
+        <img src="https://image.space.rakuten.co.jp/d/strg/ctrl/9/bff5cd9eaf45eba540bb21c8a30fbd82b8962895.11.2.9.2.jpeg">
+        <h5>森戸 知沙希</h5>
+      </div>
+      <div class="member">
+        <img src="https://thetv.jp/i/nw/1011293/10093617.jpg?w=615">
+        <h5>北川 莉央</h5>
+      </div>
+      <div class="member">
+        <img src="https://pbs.twimg.com/media/EihOvDCU8AAK6L1?format=jpg&name=large">
+        <h5>岡村 ほまれ</h5>
+      </div>
+      <div class="member">
+        <img src="https://image.space.rakuten.co.jp/d/strg/ctrl/9/2e98f14a3c62f3d7f65eeb4a5fbf830f0c0b6995.11.2.9.2.jpeg">
+        <h5>山崎 愛生</h5>
+      </div> 
+    </div>
+   </div>
+ </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="script.js"></script> 
 </body>
 </html>
